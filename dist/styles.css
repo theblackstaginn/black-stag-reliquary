@@ -209,6 +209,38 @@ button { font: inherit; }
 .colophon a:hover, .colophon a:focus-visible { color: #fff0c5; text-decoration: underline; }
 .colophon small { display: block; margin-top: 15px; color: #cfb69d; font: 10px var(--sans); }
 
+/* Quiet links connecting the wider Black Stag family of sites. */
+.colophon-sites {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 20px;
+  margin: 13px auto 17px;
+}
+.colophon .colophon-sites a {
+  padding: 4px 0 5px;
+  color: #ecc9b0;
+  border-bottom: 1px solid rgba(194, 115, 75, .42);
+  font: 11px/1.4 var(--sans);
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.colophon .colophon-sites a:hover,
+.colophon .colophon-sites a:focus-visible {
+  color: #fff4e9;
+  border-bottom-color: #dda27e;
+}
+.colophon-sites-separator {
+  color: #b97855;
+  font-size: 10px;
+}
+@media (max-width: 560px) {
+  .colophon-sites { flex-direction: column; gap: 8px; margin: 12px auto 15px; }
+  .colophon-sites-separator { display: none; }
+}
+
 .artwork-dialog { width: min(92vw, 1120px); max-width: none; max-height: 92vh; padding: clamp(18px, 3vw, 34px); border: 1px solid #c4a26a; background: #100c0c; color: var(--ink); box-shadow: 0 18px 80px #000; }
 .artwork-dialog::backdrop { background: rgba(0, 0, 0, .88); backdrop-filter: blur(4px); }
 .dialog-close { position: absolute; top: 8px; right: 12px; border: 0; background: transparent; color: #e8d6b6; cursor: pointer; font-size: 32px; line-height: 1; }
