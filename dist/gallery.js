@@ -1,18 +1,3 @@
-const gallery = document.querySelector(".gallery");
-const wallButtons = document.querySelectorAll("[data-wall-choice]");
-
-wallButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const finish = button.dataset.wallChoice;
-    gallery.dataset.wall = finish;
-    wallButtons.forEach((choice) => {
-      const selected = choice === button;
-      choice.classList.toggle("is-selected", selected);
-      choice.setAttribute("aria-pressed", String(selected));
-    });
-  });
-});
-
 const dialog = document.querySelector(".artwork-dialog");
 const dialogImage = dialog.querySelector(".dialog-image");
 const dialogTitle = dialog.querySelector(".dialog-title");
