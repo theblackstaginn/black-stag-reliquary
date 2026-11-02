@@ -177,20 +177,27 @@ button { font: inherit; }
 .view-hint { position: absolute; right: 18px; bottom: 17px; padding: 7px 10px; background: rgba(15, 10, 10, .86); border: 1px solid rgba(224, 194, 126, .5); color: #f0dcae; opacity: 0; transform: translateY(4px); font: 9px var(--sans); letter-spacing: .1em; text-transform: uppercase; transition: opacity .2s ease, transform .2s ease; }
 .artwork-open:hover .view-hint, .artwork-open:focus-visible .view-hint { opacity: 1; transform: translateY(0); }
 .caption-plate {
-  position: relative;
-  width: min(88%, 350px);
-  margin: 25px auto 0;
-  padding: 15px 24px 16px;
-  border: 1px solid rgba(208, 174, 106, .5);
-  background: linear-gradient(110deg, rgba(34, 24, 17, .94), rgba(49, 34, 24, .94) 50%, rgba(29, 20, 16, .95));
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .33), inset 0 0 0 3px rgba(8, 7, 6, .45), inset 0 0 0 4px rgba(206, 170, 101, .12);
+  width: min(95%, 420px);
+  aspect-ratio: 1200 / 371;
+  display: grid;
+  place-items: center;
+  margin: 24px auto 0;
+  padding: 0;
+  border: 0;
+  background: url("reliquary-copper-placard.webp") center / 100% 100% no-repeat;
+  box-shadow: none;
 }
-.plate-pin { position: absolute; top: 9px; width: 4px; height: 4px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f4dda2, #94703b 60%, #382716); box-shadow: 0 1px 2px #090706; }
-.plate-pin:first-child { left: 10px; }
-.plate-pin:last-child { right: 10px; }
-.plate-kicker { margin: 0 0 5px; color: #c6a86b; font: 8px var(--sans); letter-spacing: .2em; text-transform: uppercase; }
-.caption-plate h3 { margin: 0; color: #f0dec0; font-size: clamp(19px, 2.4vw, 24px); font-weight: 400; }
-.plate-note { margin: 5px 0 0; color: #bdaa91; font-size: 12px; font-style: italic; line-height: 1.55; }
+.caption-plate h3 {
+  width: 80%;
+  margin: 0;
+  transform: translateY(-30%);
+  color: #f2d8ad;
+  font-size: clamp(15px, 1.7vw, 21px);
+  font-weight: 400;
+  line-height: 1.16;
+  text-wrap: balance;
+  text-shadow: 0 2px 3px #140807, 0 3px 9px rgba(8, 3, 2, .92);
+}
 .gallery-footnote { margin: 45px 0 0; color: #c5b298; font-size: 13px; font-style: italic; text-align: center; }
 
 .colophon {
@@ -242,6 +249,7 @@ button { font: inherit; }
   .frame-square { width: min(100%, 420px); }
   .frame-landscape { width: min(100%, 550px); }
   .caption-plate { margin-top: 18px; }
+  .caption-plate h3 { font-size: clamp(14px, 4vw, 18px); }
 }
 @media (max-width: 460px) {
   .masthead-inner { width: calc(100% - 24px); }
@@ -321,7 +329,7 @@ button { font: inherit; }
   .original-frame-square { width: min(100%, 355px); }
   .original-frame-landscape { width: min(100%, 390px); }
   .caption-plate {
-    width: min(84%, 300px);
+    width: min(92%, 340px);
     margin-top: 28px;
   }
   .gallery-footnote {
