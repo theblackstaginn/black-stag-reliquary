@@ -97,7 +97,7 @@ a.masthead-title:focus-visible { color: #fff1dc; }
   text-align: center;
   background: transparent;
 }
-.welcome-ornament { display: flex; justify-content: center; align-items: center; gap: 14px; color: var(--brass-light); font-size: 14px; }
+.welcome-ornament { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 10px; color: var(--brass-light); font-size: 14px; }
 .welcome-ornament span { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--brass)); }
 .welcome-ornament span:last-child { transform: rotate(180deg); }
 .eyebrow {
@@ -107,7 +107,8 @@ a.masthead-title:focus-visible { color: #fff1dc; }
   letter-spacing: .28em;
   text-transform: uppercase;
 }
-.welcome-copy { max-width: 510px; margin: 16px auto 0; color: #c6b39a; font-size: 16px; line-height: 1.75; }
+.welcome .eyebrow { margin-top: 34px; }
+.welcome-copy { max-width: 510px; margin: 12px auto 0; color: #c6b39a; font-size: 16px; line-height: 1.75; }
 .gallery {
   position: relative;
   isolation: isolate;
