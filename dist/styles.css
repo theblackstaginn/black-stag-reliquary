@@ -256,3 +256,76 @@ button { font: inherit; }
   .gallery-footnote { margin-top: 35px; font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+/* RELIQUARY DESKTOP GALLERY POLISH
+   The entire wall illustration fills the desktop view without tiling or cropping.
+   The mobile portrait composition is untouched. */
+@media (min-width: 761px) {
+  body::before {
+    background-size: 100% 100%;
+    background-position: center center;
+  }
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(420px, calc(100svh - var(--header-height)), 720px);
+    padding: 68px 28px;
+    background: radial-gradient(ellipse at 50% 50%, rgba(15, 5, 8, .63) 0%, rgba(15, 5, 8, .3) 42%, transparent 76%);
+  }
+  .welcome h1 {
+    font-size: clamp(55px, 6vw, 80px);
+    text-shadow: 0 5px 24px rgba(0, 0, 0, .84);
+  }
+  .welcome-copy {
+    max-width: 600px;
+    font-size: 17px;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .95);
+  }
+  .gallery {
+    padding: clamp(45px, 5vw, 76px) 32px 100px;
+  }
+  .gallery-inner {
+    max-width: 1030px;
+  }
+  .gallery-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    text-align: center;
+    margin-bottom: clamp(44px, 5vw, 68px);
+  }
+  .gallery-heading h2 {
+    font-size: clamp(39px, 4vw, 52px);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, .94);
+  }
+  .gallery-heading .eyebrow {
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .95);
+  }
+  .gallery-heading::after {
+    content: "";
+    display: block;
+    width: 112px;
+    height: 1px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, transparent, rgba(224, 194, 126, .85), transparent);
+  }
+  .artworks {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(60px, 7vw, 110px);
+  }
+  .original-frame-square { width: min(100%, 355px); }
+  .original-frame-landscape { width: min(100%, 390px); }
+  .caption-plate {
+    width: min(84%, 300px);
+    margin-top: 28px;
+  }
+  .gallery-footnote {
+    margin-top: 78px;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .95);
+  }
+}
