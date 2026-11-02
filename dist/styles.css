@@ -185,7 +185,7 @@ button { font: inherit; }
   margin: 24px auto 0;
   padding: 0;
   border: 0;
-  background: url("reliquary-copper-placard.webp") center / 100% 100% no-repeat;
+  background: url("reliquary-copper-placard.webp?v=near-black-20261102") center / 100% 100% no-repeat;
   box-shadow: none;
 }
 .caption-plate h3 {
@@ -251,7 +251,7 @@ button { font: inherit; }
   .frame-square { width: min(100%, 420px); }
   .frame-landscape { width: min(100%, 550px); }
   .caption-plate { margin-top: 18px; }
-  .caption-plate h3 { font-size: clamp(14px, 4vw, 18px); }
+  .caption-plate h3 { font-size: clamp(14px, 4vw, 18px); transform: none; text-align: center; }
 }
 @media (max-width: 460px) {
   .masthead-inner { width: calc(100% - 24px); }
