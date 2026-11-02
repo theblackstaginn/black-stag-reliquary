@@ -283,3 +283,28 @@ button { font: inherit; }
   .gallery-footnote { margin-top: 35px; font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+/* BEGIN RELIQUARY VICTORIAN WALL: complete images, never tiled */
+/* Retains original framed artworks, gallery controls, and the Old stone choice. */
+.gallery[data-wall="claret"] {
+  background-color: #200708;
+}
+.gallery[data-wall="claret"] .wall-texture {
+  background-image: url("reliquary-victorian-wall-desktop.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+.gallery[data-wall="claret"]::before {
+  background:
+    linear-gradient(90deg, rgba(9, 5, 5, .28), transparent 24%, transparent 76%, rgba(9, 5, 5, .28)),
+    linear-gradient(180deg, rgba(9, 5, 5, .08), transparent 32%, rgba(9, 5, 5, .13));
+}
+@media (max-width: 760px) {
+  .gallery[data-wall="claret"] .wall-texture {
+    background-image: url("reliquary-victorian-wall-mobile.webp");
+    background-position: center center;
+  }
+}
+/* END RELIQUARY VICTORIAN WALL */
