@@ -63,37 +63,29 @@ button { font: inherit; }
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
 }
-.wordmark {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.masthead-title {
+  display: block;
+  margin: 0;
+  color: #f3dfc4;
+  font-family: var(--serif);
+  font-size: clamp(29px, 3.3vw, 40px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: .045em;
+  text-align: center;
+  text-shadow: 0 2px 5px #080606, 0 3px 16px #080606;
+}
+.masthead-title a,
+a.masthead-title {
+  color: inherit;
   text-decoration: none;
 }
-.seal {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(224, 194, 126, .7);
-  border-radius: 50%;
-  color: var(--brass-light);
-  font-size: 22px;
-  box-shadow: inset 0 0 0 4px rgba(0, 0, 0, .22), 0 0 18px rgba(0, 0, 0, .3);
-}
-.wordmark-small, .wordmark-main { display: block; }
-.wordmark-small {
-  color: #d4bc8e;
-  font: 10px/1.3 var(--sans);
-  letter-spacing: .25em;
-  text-shadow: 0 2px 8px #080606;
-}
-.wordmark-main { margin-top: 3px; font-size: 23px; letter-spacing: .025em; text-shadow: 0 2px 5px #080606, 0 3px 14px #080606; }
-.masthead nav { display: flex; gap: clamp(18px, 4vw, 46px); font: 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; }
-.masthead nav a { color: #ead8b6; text-decoration: none; text-shadow: 0 2px 6px #060505, 0 3px 12px #060505; transition: color .2s ease; }
-.masthead nav a:hover, .masthead nav a:focus-visible { color: #fff0c5; }
+.masthead-title a:hover,
+.masthead-title a:focus-visible,
+a.masthead-title:hover,
+a.masthead-title:focus-visible { color: #fff1dc; }
 .masthead-rule {
   height: 3px;
   background: linear-gradient(90deg, transparent, rgba(188, 99, 65, .38) 15%, #a35a3c 50%, rgba(188, 99, 65, .38) 85%, transparent);
@@ -101,7 +93,7 @@ button { font: inherit; }
 
 .welcome {
   position: relative;
-  padding: clamp(66px, 9vw, 116px) 24px clamp(65px, 8vw, 102px);
+  padding: 50px 24px 36px;
   text-align: center;
   background: transparent;
 }
@@ -115,16 +107,7 @@ button { font: inherit; }
   letter-spacing: .28em;
   text-transform: uppercase;
 }
-.welcome h1 {
-  margin: 12px 0 13px;
-  color: #f1dfbd;
-  font-size: clamp(42px, 6.1vw, 72px);
-  font-weight: 400;
-  letter-spacing: .025em;
-  line-height: 1.03;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, .55);
-}
-.welcome-copy { max-width: 510px; margin: 0 auto; color: #c6b39a; font-size: 16px; line-height: 1.75; }
+.welcome-copy { max-width: 510px; margin: 16px auto 0; color: #c6b39a; font-size: 16px; line-height: 1.75; }
 .gallery {
   position: relative;
   isolation: isolate;
@@ -264,14 +247,12 @@ button { font: inherit; }
 @media (max-width: 760px) {
   :root { --header-height: 89px; }
   body::before { background-image: url("reliquary-victorian-wall-mobile.webp"); }
-  .masthead-inner { width: calc(100% - 30px); min-height: 85px; gap: 15px; }
+  .masthead-inner { width: calc(100% - 30px); min-height: 85px; }
+  .masthead-title { font-size: 27px; }
   .masthead { min-height: 86px; background-image: url("reliquary-copper-ceiling-mobile.webp"); background-position: center 48%; }
   .colophon { min-height: 255px; background-image: url("reliquary-floor-mobile.webp"); background-position: center 58%; }
   .masthead::before { background: linear-gradient(90deg, rgba(5, 4, 4, .84), rgba(5, 4, 4, .55) 45%, rgba(5, 4, 4, .72)); }
-  .seal { width: 39px; height: 39px; font-size: 18px; }
-  .wordmark { gap: 10px; }
-  .wordmark-main { font-size: 19px; }
-  .masthead nav { gap: 15px; font-size: 9px; letter-spacing: .08em; }
+  .welcome { padding: 43px 18px 24px; }
   .gallery { padding: 30px 18px 72px; }
   .artworks { grid-template-columns: 1fr; gap: 46px; max-width: 590px; margin: auto; }
   .frame-square { width: min(100%, 420px); }
@@ -282,9 +263,7 @@ button { font: inherit; }
 }
 @media (max-width: 460px) {
   .masthead-inner { width: calc(100% - 24px); }
-  .masthead nav { flex-direction: column; gap: 8px; text-align: right; }
-  .wordmark-small { font-size: 8px; }
-  .wordmark-main { font-size: 17px; }
+  .masthead-title { font-size: 25px; }
   .welcome-copy { font-size: 14px; }
   .frame { padding: 9px; }
   .frame-gilt { padding: 7px; }
@@ -306,13 +285,9 @@ button { font: inherit; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: clamp(310px, 43svh, 500px);
-    padding: 56px 28px;
+    min-height: clamp(210px, 28svh, 340px);
+    padding: 40px 28px 34px;
     background: radial-gradient(ellipse at 50% 50%, rgba(15, 5, 8, .63) 0%, rgba(15, 5, 8, .3) 42%, transparent 76%);
-  }
-  .welcome h1 {
-    font-size: clamp(55px, 6vw, 80px);
-    text-shadow: 0 5px 24px rgba(0, 0, 0, .84);
   }
   .welcome-copy {
     max-width: 600px;
