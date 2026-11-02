@@ -250,8 +250,9 @@ button { font: inherit; }
   .artworks { grid-template-columns: 1fr; gap: 46px; max-width: 590px; margin: auto; }
   .frame-square { width: min(100%, 420px); }
   .frame-landscape { width: min(100%, 550px); }
-  .caption-plate { margin-top: 18px; }
-  .caption-plate h3 { font-size: clamp(14px, 4vw, 18px); transform: none; text-align: center; }
+  /* Center titles in the open space above the plaque's ornamental lower band. */
+  .caption-plate { margin-top: 18px; grid-template-rows: 72% 28%; }
+  .caption-plate h3 { grid-row: 1; font-size: clamp(14px, 4vw, 18px); transform: none; text-align: center; }
 }
 @media (max-width: 460px) {
   .masthead-inner { width: calc(100% - 24px); }
